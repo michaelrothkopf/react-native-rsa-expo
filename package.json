@@ -1,5 +1,5 @@
 {
-  "name": "react-native-rsa",
+  "name": "react-native-rsa-expo",
   "version": "0.0.4",
   "description": "RSA cryptography library compatible with React Native and Expo",
   "main": "index.js",
