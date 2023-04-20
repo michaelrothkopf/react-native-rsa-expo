@@ -1,49 +1,49 @@
 # react-native-rsa
-React native rsa crypto lib
+A library which provides cryptographic functions to React Native. This library is compatible with Expo, no ejection required.
 
-## The use case
-Initially this was created for encrypted messaging
+## Use Case
+Other similar libraries either do not provide key generation functionality or are not compatible with Expo. This library solves both problems.
 
-Client would generate RSA key pairs and store private key locally and share the public key.
+## Examples
 
-## How to use
-
-
+#### Installation
 ```
 npm install react-native-rsa
 ```
-Generate RSA keys
+
+#### Key Generation
 ```
-var RSAKey = require('react-native-rsa');
+const RSAKey = require('react-native-rsa');
 const bits = 1024;
 const exponent = '10001'; // must be a string. This is hex string. decimal = 65537
-var rsa = new RSAKey();
+const rsa = new RSAKey();
 rsa.generate(bits, exponent);
-var publicKey = rsa.getPublicString(); // return json encoded string
-var privateKey = rsa.getPrivateString(); // return json encoded string
+const publicKey = rsa.getPublicString(); // return json encoded string
+const privateKey = rsa.getPrivateString(); // return json encoded string
 ```
 
-Encrypt
-
+#### Encryption
 ```
-var rsa = new RSAKey();
+const rsa = new RSAKey();
 rsa.setPublicString(publicKey);
-var originText = 'sample String Value';
-var encrypted = rsa.encrypt(originText);
+const originText = 'sample String Value';
+const encrypted = rsa.encrypt(originText);
 ```
 
-Decrypt
+#### Decryption
 ```
 rsa.setPrivateString(privateKey);
-var decrypted = rsa.decrypt(encrypted); // decrypted == originText
+const decrypted = rsa.decrypt(encrypted); // decrypted == originText
 ```
 
 Tested works with ursa in nodejs (with ursa padding set to PKCS1).
 
 ## Credits
-This lib uses Tom Wu's jsbn http://www-cs-students.stanford.edu/~tjw/jsbn/
+This library uses Tom Wu's jsbn http://www-cs-students.stanford.edu/~tjw/jsbn/.
+The original creator of this library is https://github.com/z-hao-wang/. The original URL is https://github.com/z-hao-wang/react-native-rsa. I (mrbros35) have updated the documentation and plan on updating the NPM version to include updated functionalities.
 
-## TODO: Still missing export to PEM format
+## TODO
+If you would like to contribute, please create a pull request. Currently, the library is missing PEM handling.
 
 ## Known issues:
 * Node js may complain about 'window' is not defined. I just commented out the 'window' related codes in rng.js and it worked. (It look like just adding some extra randomness. Should still work without that part). I don't recommend using this lib in nodejs. I use ursa or node-rsa lib for nodejs.
