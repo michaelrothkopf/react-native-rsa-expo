@@ -1,26 +1,26 @@
 {
   "name": "react-native-rsa",
-  "version": "0.0.3",
-  "description": "RSA crypto lib for react native",
+  "version": "0.0.4",
+  "description": "RSA cryptography library compatible with React Native and Expo",
   "main": "index.js",
   "scripts": {
     "test": "jest"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/z-hao-wang/react-native-rsa.git"
+    "url": "git+https://github.com/mrbros35/react-native-rsa.git"
   },
   "keywords": [
     "rsa",
     "crypto",
     "react-native"
   ],
-  "author": "Hao Wang",
+  "author": "mrbros35",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/z-hao-wang/react-native-rsa/issues"
+    "url": "https://github.com/mrbros35/react-native-rsa/issues"
   },
-  "homepage": "https://github.com/z-hao-wang/react-native-rsa#readme",
+  "homepage": "https://github.com/mrbros35/react-native-rsa#readme",
   "devDependencies": {
     "jest-cli": "^0.9.2"
   }
