@@ -40,10 +40,10 @@ Tested works with ursa in nodejs (with ursa padding set to PKCS1).
 
 ## Credits
 This library uses Tom Wu's jsbn http://www-cs-students.stanford.edu/~tjw/jsbn/.
-The original creator of this library is https://github.com/z-hao-wang/. The original URL is https://github.com/z-hao-wang/react-native-rsa. I (mrbros35) have updated the documentation and plan on updating the NPM version to include updated functionalities.
+The original creator of this library is https://github.com/z-hao-wang/. The original URL is https://github.com/z-hao-wang/react-native-rsa. I (Michael Rothkopf) have updated the documentation and plan on updating the NPM version to include updated functionalities.
 
 ## TODO
 If you would like to contribute, please create a pull request. Currently, the library is missing PEM handling.
 
 ## Known issues:
-* Node js may complain about 'window' is not defined. I just commented out the 'window' related codes in rng.js and it worked. (It look like just adding some extra randomness. Should still work without that part). I don't recommend using this lib in nodejs. I use ursa or node-rsa lib for nodejs.
+* NodeJS may complain about 'window' is not defined. I commented out the lines referencing 'window' in rng.js without issue. (It looked like it just added some extra randomness. It should still work without that part, though may be less cryptographically secure.) I don't recommend using this library with NodeJS. I'd use ursa or node-rsa.
